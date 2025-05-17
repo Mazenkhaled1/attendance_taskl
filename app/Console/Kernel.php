@@ -4,9 +4,19 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Console\Commands\InstallMicroservice;
 
 class Kernel extends ConsoleKernel
 {
+    /**
+     * The Artisan commands provided by your application.
+     *
+     * @var array
+     */
+    protected $commands = [
+        InstallMicroservice::class,
+    ];
+
     /**
      * Define the application's command schedule.
      */
@@ -25,3 +35,4 @@ class Kernel extends ConsoleKernel
         require base_path('routes/console.php');
     }
 }
+
